@@ -27,8 +27,8 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests
-        run: npx playwright test
+      - name: 🚀 Run Playwright Tests (Data-Driven + Parallel)
+        run: npx playwright test --workers=4
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v3
