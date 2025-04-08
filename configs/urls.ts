@@ -1,1 +1,1 @@
-export const HOME = "https://admin-demo.nopcommerce.com/login"
+export const HOME = "https://automationexercise.com/"
