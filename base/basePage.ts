@@ -25,6 +25,26 @@ export default class BasePage{
 		await Promise.all([expect(this.page.locator(locator)).toBeVisible()]);
 	}
 
+    protected async selectOptionByValue(locator: string, value: string): Promise<void> {
+        await this.page.selectOption(locator, { value });
+    }
+
+    protected async selectOptionByLabel(locator: string, label: string): Promise<void> {
+        await this.page.selectOption(locator, { label });
+    }
+    
+    protected  async selectOptionByIndex(locator: string, index: number): Promise<void> {
+        await this.page.selectOption(locator, { index });
+    }
+
+    protected async checkOnCheckbox(locator:string){
+        await this.page.check(locator)
+    }
+
+      
+
+    
+
     
     
     

@@ -21,4 +21,5 @@ export default class HomePage extends BasePage {
     async clickSignupLogin(){
         await this.click(this.signupLoginBtn);
     }
+
 }

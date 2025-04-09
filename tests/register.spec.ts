@@ -1,4 +1,4 @@
-import { generateRandomEmail } from './../utils/dataUtils';
+import { generateRandomEmail, getRandomDay, getRandomMonth, getRandomYear } from './../utils/dataUtils';
 import { test, expect } from '@playwright/test';
 import * as data from './../testdata/data.register.json';
 import AccountPage from '../pages/AccountPage';
@@ -18,16 +18,27 @@ test('test admin login flow',async ({ page, baseURL }) => {
     accountPage = new AccountPage(page);
 
     const randomEmail = generateRandomEmail();
-    const testData = { ...data, email: randomEmail };
+    const testData = { ...data, email: randomEmail};
 
     await homePage.openHomepage(url);
     await homePage.homepageLoaded();
     await homePage.clickSignupLogin();
 
     await registerPage.verifyNewUserSignupVisible();
-    await registerPage.createNewAccount(data.username, testData.email);
+    await registerPage.createNewAccount(testData.username, testData.email);
     await registerPage.verifyEnterAccountInformationVisible();
+    await registerPage.fillAccountInformation(testData.email, testData.day, testData.month, testData.year );
+    await registerPage.selectNewLetterCheckbox();
+    await registerPage.selectOfferCheckbox();
+    await registerPage.fillAddressInformation(testData.firstname, testData.lastname, testData.company, testData.address1, testData.address2, testData.country, testData.state, testData.city, testData.zipcode, testData.mobileNumber);
+    await registerPage.clickCreateButton();
 
-
-
+    await accountPage.verifyAccountCreated();
+    await accountPage.clickContinueButton();
+    await accountPage.verifyLoggedInAsUsername(testData.username);
+    await accountPage.clickDeleteAccountButton();
+    await accountPage.verifyAccountDeleted();
+    await accountPage.clickContinueButton();
 });
+
+
