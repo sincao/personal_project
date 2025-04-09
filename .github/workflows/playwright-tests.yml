@@ -34,7 +34,7 @@ jobs:
           name: playwright-report
           path: playwright-report/
       - name: Send Email if Tests Fail
-        if: failure()
+        if: always()
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
