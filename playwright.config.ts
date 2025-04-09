@@ -6,7 +6,7 @@ export default defineConfig({
   retries: 0, // Số lần chạy lại khi test fail
   use: {
     baseURL: "https://automationexercise.com/",
-    headless: false, // Chạy không hiển thị giao diện trình duyệt
+    headless: true, // Chạy không hiển thị giao diện trình duyệt
     viewport: { width: 1280, height: 720 }, // Kích thước màn hình
     screenshot: "only-on-failure", // Chụp màn hình khi test fail
     video: "retain-on-failure", // Ghi video nếu test fail
