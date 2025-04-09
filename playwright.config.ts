@@ -33,6 +33,6 @@ export default defineConfig({
   reporter: [
     ['json', { outputFile: 'reports/report.json' }], // Lưu file JSON vào reports/
     ['junit', { outputFile: 'reports/results.xml' }], // Lưu file XML vào reports/
-    ['html', { outputFolder: 'reports/html-report', open: 'never' }] // Lưu báo cáo HTML vào reports/
+    ['html', { outputFolder: 'playwright-report', open: 'never' }] // Lưu báo cáo HTML vào reports/
   ],
 });
