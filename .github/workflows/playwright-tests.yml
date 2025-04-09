@@ -27,6 +27,16 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      - name: Check if Playwright Report exists
+  run: |
+    if [ -d "playwright-report" ]; then
+      echo "Playwright report exists."
+    else
+      echo "Playwright report does not exist."
+      exit 1
+    fi
+
+
       - name: 🚀 Run Playwright Tests (Data-Driven + Parallel)
         run: npx playwright test --workers=4
 
