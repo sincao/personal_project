@@ -1,4 +1,8 @@
 {
+  "scripts":{
+    "stg-test": "URL=https://automationexercise.com/ npx playwright test --project=chromium tests/ --workers 20"
+
+  },
   "devDependencies": {
     "@playwright/test": "^1.51.1",
     "allure-playwright": "^3.2.1"
