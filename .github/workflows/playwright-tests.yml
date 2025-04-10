@@ -41,7 +41,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.EMAIL_USER }}
           password: ${{ secrets.EMAIL_PASS }}
-          subject: "❌ Playwright Tests Failed - ${{ github.repository }}"
+          subject: "Playwright Tests result - ${{ github.repository }}"
           to: ${{ secrets.EMAIL_TO }}
           from: ${{ secrets.EMAIL_USER }}
           body: |
