@@ -12,8 +12,8 @@ export default defineConfig({
     video: "retain-on-failure", // Ghi video nếu test fail
     trace: 'off',
   },
-  workers: 1, // Chạy 4 test cùng lúc
-  fullyParallel: false, // Chạy tất cả test case song song
+  workers: 4, // Chạy 4 test cùng lúc
+  fullyParallel: true, // Chạy tất cả test case song song
   projects: [
     {
       name: "Chromium",

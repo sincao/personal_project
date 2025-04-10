@@ -33,3 +33,23 @@ test('test login user with correct email and password',async ({ page, baseURL })
     await accountPage.verifyAccountDeleted();
 
 });
+
+test('test login user with incorrect email and password', async ({page,baseURL})=>{
+    url = `${baseURL}`;
+    homePage = new HomePage(page);
+    registerPage = new RegisterPage(page);
+    loginPage = new LoginPage(page);
+    accountPage = new AccountPage(page);
+
+    const randomEmail = generateRandomEmail();
+    const testData = { ...data, email: randomEmail};
+
+    await homePage.openHomepage(url);
+    await homePage.homepageLoaded();
+    await homePage.clickSignupLogin();
+    
+    await loginPage.verifyLoginToYourAccount();
+    await loginPage.fillUserAccount(testData.email, testData.password);
+    await loginPage.clickLoginButton();
+    await loginPage.verifyLoginFailed();
+})
