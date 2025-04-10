@@ -6,6 +6,7 @@ export default class HomePage extends BasePage {
     private homeTxt = "//a[normalize-space(text())='Home']"
     private signupLoginBtn = "//a[normalize-space(text())='Signup / Login']"
     private logoutBtn = "//a[normalize-space(text())='Logout']"
+    private testcaseBtn = "//a[normalize-space(text())='Test Cases']"
 
     constructor(public page: Page) {
 		super(page);
@@ -25,6 +26,10 @@ export default class HomePage extends BasePage {
 
     async clickLogoutButton(){
         await this.click(this.logoutBtn)
+    }
+
+    async clickTestcaseButton(){
+        await this.click(this.testcaseBtn)
     }
 
 }
