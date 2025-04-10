@@ -50,7 +50,7 @@ test('test login user with incorrect email and password', async ({page,baseURL})
     await loginPage.verifyLoginFailed();
 })
 
-test.only('test logout user', async ({page, baseURL})=> {
+test('test logout user', async ({page, baseURL})=> {
     url = `${baseURL}`;
     homePage = new HomePage(page);
     registerPage = new RegisterPage(page);
