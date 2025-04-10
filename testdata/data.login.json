@@ -1,8 +1,8 @@
 {
     "empty":"",
     "username":"Tester",
-    "email": "",
-    "password":"",
+    "email": "account123@gmail.com",
+    "password":"account123",
     "day":"12",
     "month":"12",
     "year":"1999",

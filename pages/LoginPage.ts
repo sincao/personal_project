@@ -33,4 +33,8 @@ export default class LoginPage extends BasePage {
         await this.expectToBeVisible(this.loginFailed)
     }
 
+    async verifyNavigateToLoginPage(): Promise<void> {
+        await this.expectUrlContains(/.*login/)
+    }
+
 }
