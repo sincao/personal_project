@@ -1,4 +1,4 @@
-import { generateRandomEmail, getRandomDay, getRandomMonth, getRandomYear } from './../utils/dataUtils';
+import { generateRandomEmail} from './../utils/dataUtils';
 import { test, expect } from '@playwright/test';
 import * as data from './../testdata/data.register.json';
 import AccountPage from '../pages/AccountPage';
@@ -11,7 +11,7 @@ let homePage: HomePage;
 let registerPage: RegisterPage;
 let accountPage: AccountPage;
 
-test('test admin login flow',async ({ page, baseURL }) => {
+test('test register new account',async ({ page, baseURL }) => {
     url = `${baseURL}`;
     homePage = new HomePage(page);
     registerPage = new RegisterPage(page);

@@ -1,3 +1,18 @@
 {
-
+    "username":"Tester",
+    "email": "account123@gmail.com",
+    "password":"account123",
+    "day":"12",
+    "month":"12",
+    "year":"1999",
+    "firstname":"John",
+    "lastname":"Smith",
+    "company":"JS Ltd",
+    "address1":"10 Anson Road",
+    "address2":"#20-01 International Plaza",
+    "country":"Singapore",
+    "state":"Singapore",
+    "city":"Singapore",
+    "zipcode":"079903",
+    "mobileNumber":"+65 9123 4567"
 }
