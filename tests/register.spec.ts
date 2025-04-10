@@ -10,15 +10,14 @@ let url: string;
 let homePage: HomePage;
 let registerPage: RegisterPage;
 let accountPage: AccountPage;
+const randomEmail = generateRandomEmail();
+const testData = { ...data, email: randomEmail};
 
 test('test register new account',async ({ page, baseURL }) => {
     url = `${baseURL}`;
     homePage = new HomePage(page);
     registerPage = new RegisterPage(page);
     accountPage = new AccountPage(page);
-
-    const randomEmail = generateRandomEmail();
-    const testData = { ...data, email: randomEmail};
 
     await homePage.openHomepage(url);
     await homePage.homepageLoaded();
