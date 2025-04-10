@@ -26,6 +26,7 @@ export default class RegisterPage extends BasePage {
     private zipcodeTxt = "#zipcode"
     private mobileNumberTxt = "#mobile_number"
     private createBtn = "button[data-qa='create-account']"
+    private emailExistedTxt = "//p[normalize-space(text())='Email Address already exist!']"
 
 
 
@@ -77,6 +78,11 @@ export default class RegisterPage extends BasePage {
 
     async clickCreateButton(){
         await this.click(this.createBtn)
+    }
+
+    async verifyDisplayEmailExisted(){
+        await this.expectToBeVisible(this.emailExistedTxt)
+
     }
 
 
