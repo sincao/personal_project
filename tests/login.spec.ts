@@ -65,7 +65,7 @@ test('test login user with incorrect email and password', async ({page,baseURL})
     await homePage.clickSignupLogin();
     
     await loginPage.verifyLoginToYourAccount();
-    await loginPage.fillUserAccount(testData.email, testData.password);
+    await loginPage.fillUserAccount(testData.email, testData.email);
     await loginPage.clickLoginButton();
     await loginPage.verifyLoginFailed();
 })
