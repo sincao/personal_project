@@ -5,7 +5,7 @@ export default class BasePage{
 
     async navigateTo(url: string) {
         await this.page.goto(url);
-      }
+    }
 
     protected async click(locator: string){
         return this.page.locator(locator).click({timeout:3000})
@@ -41,7 +41,9 @@ export default class BasePage{
         await this.page.check(locator)
     }
 
-      
+    async expectUrlContains(endpoint) {
+        await expect(this.page).toHaveURL(endpoint);
+      }
 
     
 
